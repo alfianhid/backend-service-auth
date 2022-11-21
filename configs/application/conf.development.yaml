@@ -1,0 +1,40 @@
+server:
+  port: port
+  debug: true
+  read_timeout_seconds: 300
+  write_timeout_seconds: 300
+
+jwt:
+  secret: demo
+  duration_minutes: 15
+  refresh_duration_minutes: 15
+  max_refresh_minutes: 1440
+  signing_algorithm: HS256
+
+keycloaks:
+  path_key: ./public.key
+  realm: demo
+  client_secret: demo
+  client_id: demo-app
+  server: https://demo.id
+  user_admin: admin
+  pass_admin: admin
+  realm_admin: master
+
+redis:
+  server: ip:port
+  password: demo
+
+application:
+  min_password_strength: 0
+  swagger_ui_path: third_party/swaggerui/dist
+
+database:
+  dialect: mysql
+  user: demo
+  password: demo
+  name: demo_microservice
+  protocol: tcp
+  host: demo.us-east-2.compute.amazonaws.com
+  port: port
+  settings: tls=skip-verify&charset=utf8&parseTime=True&loc=Local&autocommit=true&timeout=20s
